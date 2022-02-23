@@ -14,12 +14,13 @@ class CreateReviewsTable extends Migration
     public function up()
     {
         Schema::create('review', function (Blueprint $table) {
+           
             $table->id();
             $table->foreignId('book_id')->constrained('book');
             $table->string('review_title', 120);
             $table->text('review_details')->nullable();
             $table->timestamp('review_date');
-            $table->enum('rating_start', [1, 2, 3, 4, 5]);
+            $table->smallInteger('rating_star');
         });
     }
 

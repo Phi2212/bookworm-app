@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Order;
 
-class UserController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -12,6 +13,16 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
+    {
+        
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
         //
     }
@@ -24,7 +35,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Order;
+        $item ->user_id = $request->user_id;
+        $item ->order_amount = $request->order_amount;
+        $item ->order_date = $request->order_date;
+        $item ->save();
+        return $item;
     }
 
     /**
@@ -34,6 +50,17 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }

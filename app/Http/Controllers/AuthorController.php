@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Author;
 
-class UserController extends Controller
+class AuthorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $AuthorList = Author::all();
+        return $AuthorList;
     }
 
     /**
@@ -35,7 +37,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

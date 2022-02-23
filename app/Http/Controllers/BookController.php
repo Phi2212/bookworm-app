@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class BookController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $BookList = Book::all();
+        return $BookList;
     }
 
     /**
@@ -24,7 +26,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //post
+    }
+
+    public function store2(Request $request)
+    {
+        //post
     }
 
     /**
@@ -35,7 +42,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $Bookselect = Book::find($id);
+        return $Bookselect;
+
     }
 
     /**
@@ -47,7 +56,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //put
     }
 
     /**
