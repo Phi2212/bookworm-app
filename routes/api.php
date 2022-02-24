@@ -23,3 +23,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/book',BookController::class);
 Route::post('/store2',[BookController::class,'store2']);
 Route::resource('/order',OrderController::class);
+Route::delete('/book/$id', [BookController::class, 'destroy']);

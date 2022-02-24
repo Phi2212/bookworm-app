@@ -26,7 +26,16 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        //post
+        $CreateBook = new Book();
+        $CreateBook ->category_id = $request->category_id;
+        $CreateBook ->author_id = $request->author_id;
+        $CreateBook ->book_title = $request->book_title;
+        $CreateBook ->book_summary = $request->book_summary;
+        $CreateBook ->book_price = $request->book_price;
+        $CreateBook ->book_cover_photo = $request->book_cover_photo;
+        $CreateBook -> save();
+        return $CreateBook;
+
     }
 
     public function store2(Request $request)
@@ -67,6 +76,8 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $BookDelete = Book::deleted($id);
+        return $BookDelete;
+        return "success";
     }
 }
