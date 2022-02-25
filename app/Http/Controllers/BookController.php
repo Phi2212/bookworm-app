@@ -15,8 +15,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        $BookList = Book::all();
-        return $BookList;
+        $BookListAll = Book::all();
+        return $BookListAll;
     }
 
     /**
