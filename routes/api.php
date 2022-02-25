@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\OrderController;
+use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,4 +24,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::resource('/book',BookController::class);
 Route::post('/store2',[BookController::class,'store2']);
 Route::resource('/order',OrderController::class);
-Route::delete('/book/id', [BookController::class, 'destroy']);
+Route::get('book-of-category/{id}',[BookController::class,'arrange_book']);

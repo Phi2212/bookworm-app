@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Book;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BookController extends Controller
 {
@@ -38,10 +39,25 @@ class BookController extends Controller
 
     }
 
+    public function arrange_book($id)
+    {
+        $category_book = DB::table('category') -> orderBy('id')-> get();
+        $bookofcategory = DB::table('book')
+        ->join('category','book.category_id','=','category.id')
+        ->where('category_id',$id)
+        ->get();
+        return $bookofcategory;
+
+        
+
+    }
+
     public function store2(Request $request)
     {
         //post
     }
+
+
 
     /**
      * Display the specified resource.
