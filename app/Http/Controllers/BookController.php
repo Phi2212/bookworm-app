@@ -87,6 +87,22 @@ class BookController extends Controller
         return $book_recommend;
     }
 
+    public function BookPopular(){
+        $book_popular = DB::table('book')
+        ->join('review','book.id','=','review.book_id')
+        ->leftJoin('discount','book.id','=','discount.book_id')
+        ->select('review.book_id')
+        ->selectRaw('count(review.id) as reviews_each_book')
+        ->selectRaw('(CASE WHEN discount.discount_price IS null THEN book.book_price ELSE discount.discount_price END) as final_price')
+        ->groupBy('review.book_id','discount.discount_price','book.book_price')
+        ->orderByDesc('reviews_each_book')
+        ->orderBy('final_price')
+        ->limit(8)
+        ->get();
+
+        return $book_popular;
+    }
+
     public function store2(Request $request)
     {
         //post

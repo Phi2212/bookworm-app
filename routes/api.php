@@ -32,6 +32,7 @@ Route::get('book-of-author/{id}',[BookController::class,'author_book']);
 //Book carousel
 Route::get('/book-carousel',[BookController::class,'BookCarousel']);
 Route::get('/book-recommend',[BookController::class,'BookRecommend']);
+Route::get('/book-popular',[BookController::class,'BookPopular']);
 
 
 
