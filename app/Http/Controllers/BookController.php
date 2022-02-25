@@ -59,7 +59,7 @@ class BookController extends Controller
         return $bookofauthor;
     }
 
-    public function Bookmostdiscount(){
+    public function BookCarousel(){
         $bookcarousel = DB::table('book')
         ->join('discount','book.id','=','discount.book_id')
         ->select('book.id')
@@ -69,6 +69,22 @@ class BookController extends Controller
         ->get();
 
         return $bookcarousel;
+    }
+
+    public function BookRecommend(){
+        $book_recommend = DB::table('book')
+        ->join('review','book.id','=','review.book_id')
+        ->leftJoin('discount','book.id','=','discount.book_id')
+        ->select('review.book_id')
+        ->selectRaw('avg(review.rating_star) as rating_avg')
+        ->selectRaw('(CASE WHEN discount.discount_price IS null THEN book.book_price ELSE discount.discount_price END) as final_price')
+        ->groupBy('review.book_id','discount.discount_price','book.book_price')
+        ->orderByDesc('rating_avg')
+        ->orderBy('final_price')
+        ->limit(8)
+        ->get();
+
+        return $book_recommend;
     }
 
     public function store2(Request $request)
