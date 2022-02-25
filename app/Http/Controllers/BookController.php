@@ -59,6 +59,17 @@ class BookController extends Controller
         return $bookofauthor;
     }
 
+    public function Bookmostdiscount(){
+        $bookcarousel = DB::table('book')
+        ->join('discount','book.id','=','discount.book_id')
+        ->selectRaw('(book_price-discount_price) as discount')
+        ->orderBy('discount','desc')
+        ->limit(10)
+        ->get();
+
+        return $bookcarousel;
+    }
+
     public function store2(Request $request)
     {
         //post
