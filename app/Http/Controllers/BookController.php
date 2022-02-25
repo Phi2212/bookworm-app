@@ -39,7 +39,7 @@ class BookController extends Controller
 
     }
 
-    public function arrange_book($id)
+    public function category_book($id)
     {
         $category_book = DB::table('category') -> orderBy('id')-> get();
         $bookofcategory = DB::table('book')
@@ -47,9 +47,16 @@ class BookController extends Controller
         ->where('category_id',$id)
         ->get();
         return $bookofcategory;
+    }
 
-        
-
+    public function author_book($id)
+    {
+        $author_book = DB::table('author') -> orderBy('id')-> get();
+        $bookofauthor = DB::table('book')
+        ->join('author','book.author_id','=','author.id')
+        ->where('author_id',$id)
+        ->get();
+        return $bookofauthor;
     }
 
     public function store2(Request $request)

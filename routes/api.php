@@ -22,6 +22,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/book',BookController::class);
+
 Route::post('/store2',[BookController::class,'store2']);
+
+Route::get('book-of-category/{id}',[BookController::class,'category_book']);
+
+Route::get('book-of-author/{id}',[BookController::class,'author_book']);
+
+
+
 Route::resource('/order',OrderController::class);
-Route::get('book-of-category/{id}',[BookController::class,'arrange_book']);
