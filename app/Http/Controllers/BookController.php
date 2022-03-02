@@ -143,8 +143,6 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        $BookDelete = Book::deleted($id);
-        return $BookDelete;
-        return "success";
+
     }
 }

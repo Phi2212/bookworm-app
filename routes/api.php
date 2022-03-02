@@ -21,6 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Start Book Route
 Route::resource('/book',BookController::class);
 
 Route::post('/store2',[BookController::class,'store2']);
@@ -29,11 +30,17 @@ Route::get('book-of-category/{id}',[BookController::class,'category_book']);
 
 Route::get('book-of-author/{id}',[BookController::class,'author_book']);
 
-//Book carousel
 Route::get('/book-carousel',[BookController::class,'BookCarousel']);
+
 Route::get('/book-recommend',[BookController::class,'BookRecommend']);
+
 Route::get('/book-popular',[BookController::class,'BookPopular']);
 
+// End Book Route
 
-
+// Start Order Route
 Route::resource('/order',OrderController::class);
+// End Order Route
+
+// Start User Route 
+// End User Route
