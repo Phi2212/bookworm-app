@@ -1,101 +1,188 @@
-import React, { Component } from 'react';
-import {
-  Carousel,
-  CarouselItem,
-  CarouselControl,
-  CarouselIndicators,
-  CarouselCaption
-} from 'reactstrap';
-import Header from './component/partials/Header';
+import React from 'react'
+import Header from './component/partials/header'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const items = [
-  {
-    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa1d%20text%20%7B%20fill%3A%23555%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa1d%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22285.921875%22%20y%3D%22218.3%22%3EFirst%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-    altText: 'Slide 1',
-    caption: 'Slide 1'
-  },
-  {
-    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa20%20text%20%7B%20fill%3A%23444%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa20%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23666%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22247.3203125%22%20y%3D%22218.3%22%3ESecond%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-    altText: 'Slide 2',
-    caption: 'Slide 2'
-  },
-  {
-    src: 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22800%22%20height%3D%22400%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15ba800aa21%20text%20%7B%20fill%3A%23333%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A40pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15ba800aa21%22%3E%3Crect%20width%3D%22800%22%20height%3D%22400%22%20fill%3D%22%23555%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22277%22%20y%3D%22218.3%22%3EThird%20slide%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E',
-    altText: 'Slide 3',
-    caption: 'Slide 3'
-  }
-];
+<Header />
+function welcome() {
+  return (
+    <div className='container'>
+      <section>
+        <div className='row'>
+          <h4 className='col-md-6'>On Sale</h4>
+          <div className="dropdown col-md-6 p-bottom d-flex justify-content-end">
+            <button className="btn main-color text-white dropdown-toggle" type="button" id="dropdownMenuButton1"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              View All
+            </button>
+            <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a className="dropdown-item" href="#">Action</a></li>
+              <li><a className="dropdown-item" href="#">Another action</a></li>
+              <li><a className="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="carouselExampleControls" className="carousel slide border border-1" data-bs-ride="carousel">
+          <div className="carousel-inner mg-auto w-80 p-3">
+            <div className="carousel-item active">
+              <div className='row'>
+                <div className="col-md-3" key={i}>
+                  <div className='card border border-1 h-100'>
+                    <img src="#" className="card-img-top img-book-card" alt="Image Error" />
+                    <div className="card-body">
+                      <h5 className="card-title">abc</h5>
+                      <p className="card-text">abc</p>
+                    </div>
+                    <div className='card-footer text-white'>
+                      <div>
+                        <div className='d-inline text-decoration-line-through fw-light'>
+                          abc
+                        </div>
+                        <div className='d-inline fw-bold'>
+                          abc
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className='row'>
+                <div className="col-md-3">
+                  <div className='card border border-1 h-100'>
+                    <img src="#" className="card-img-top img-book-card" alt="Image Error" />
+                    <div className="card-body">
+                      <h5 className="card-title">abc</h5>
+                      <p className="card-text">abc</p>
+                    </div>
+                    <div className='card-footer text-white'>
 
+                      <div>
+                        <div className='fw-bold'>
+                          abc
+                        </div>
+                      </div>
 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="carousel-item">
+              <div className='row'>
+                <div className="col-md-3" key={i}>
+                  <div className='card border border-1 h-100'>
+                    <img src="abc" className="card-img-top img-book-card" alt="Image Error" />
+                    <div className="card-body">
+                      <h5 className="card-title">abc</h5>
+                      <p className="card-text">abc</p>
+                    </div>
+                    <div className='card-footer text-white'>
+                      <div>
+                        <div className='d-inline text-decoration-line-through fw-light'>
+                          abc
+                        </div>
+                        <div className='d-inline fw-bold'>
+                          abc
+                        </div>
+                      </div>
 
-class Example extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { activeIndex: 0 };
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
-    this.goToIndex = this.goToIndex.bind(this);
-    this.onExiting = this.onExiting.bind(this);
-    this.onExited = this.onExited.bind(this);
-  }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev">
+            <span className="carousel-control-prev-icon bg-dark text-dark h-25" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+            data-bs-slide="next">
+            <span className="carousel-control-next-icon bg-dark text-dark h-25" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+      <section className='mt-5'>
+        <div className="text-center">
+          <div className="mx-auto col-md-8">
+            <h3 className="mb-3">Featured Books</h3>
+          </div>
+        </div>
+        <div>
+          <ul className="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
+            <li className="nav-item" role="presentation">
+              <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                aria-selected="true">
+                Recommended
+              </button>
+            </li>
+            <li className="nav-item" role="presentation">
+              <button className="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                aria-selected="false">
+                Popular
+              </button>
+            </li>
+          </ul>
+          <div className="tab-content border border-1" id="pills-tImage Errorontent">
+            <div className="tab-pane fade show active" id="pills-home" role="tabpanel"
+              aria-labelledby="pills-home-tab">
+              <div className="row gy-4 mg-auto w-80 p-3">
+                <div className="col-md-3">
+                  <div className='card border border-1 h-100'>
+                    <img src="#" className="card-img-top img-book-card" alt="Image Error" />
+                    <div className="card-body">
+                      <h5 className="card-title">abc</h5>
+                      <p className="card-text">abc</p>
+                    </div>
+                    <div className='card-footer text-white'>
+                      <div>
+                        <div className='d-inline text-decoration-line-through fw-light'>
+                          abc
+                        </div>
+                        <div className='d-inline fw-bold'>
+                          abc
+                        </div>
+                      </div>
 
-  onExiting() {
-    this.animating = true;
-  }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+              <div className="row gy-4 mg-auto w-80 p-3">
+                <div className="col-md-3">
+                  <div className='card border border-1 h-100'>
+                    <img src="#" className="card-img-top img-book-card" alt="Image Error" />
+                    <div className="card-body">
+                      <h5 className="card-title">abc</h5>
+                      <p className="card-text">abc</p>
+                    </div>
+                    <div className='card-footer text-white'>
+                      <div>
+                        <div className='d-inline text-decoration-line-through fw-light'>
+                          abc
+                        </div>
+                        <div className='d-inline fw-bold'>
+                          abc
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  onExited() {
-    this.animating = false;
-  }
-
-  next() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === items.length - 1 ? 0 : this.state.activeIndex + 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  previous() {
-    if (this.animating) return;
-    const nextIndex = this.state.activeIndex === 0 ? items.length - 1 : this.state.activeIndex - 1;
-    this.setState({ activeIndex: nextIndex });
-  }
-
-  goToIndex(newIndex) {
-    if (this.animating) return;
-    this.setState({ activeIndex: newIndex });
-  }
-
-  render() {
-    <Header />
-    const { activeIndex } = this.state;
-
-    const slides = items.map((item) => {
-      return (
-        <CarouselItem
-          onExiting={this.onExiting}
-          onExited={this.onExited}
-          key={item.src}
-        >
-          <img src={item.src} alt={item.altText} />
-          <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
-        </CarouselItem>
-      );
-    });
-
-    return (
-      <Carousel
-        activeIndex={activeIndex}
-        next={this.next}
-        previous={this.previous}
-      >
-        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
-        {slides}
-        <CarouselControl direction="prev" directionText="Previous" onClickHandler={this.previous} />
-        <CarouselControl direction="next" directionText="Next" onClickHandler={this.next} />
-      </Carousel>
-    );
-  }
+      </section>
+    </div>
+  )
 }
 
-
-export default Example;
-
+export default welcome
