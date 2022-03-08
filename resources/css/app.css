@@ -12,9 +12,3 @@ main {
     background: rgb(247, 250, 252);
 }
 
-.navbar-grid-center{
-    display: flex;
-    text-align: center;
-    position: fixed;
-    text-decoration: white;
-}

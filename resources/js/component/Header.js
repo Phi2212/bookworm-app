@@ -1,6 +1,6 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Logo from '../bookworm_icon.svg'
 import React from 'react'
 
 import {
@@ -27,14 +27,15 @@ export default class Header extends React.Component {
             isOpen: !this.state.isOpen
         });
     }
+    
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
-                    <NavbarBrand href="/">BookWorm</NavbarBrand>
+                <Navbar color="danger" light expand="md">
+                    <NavbarBrand href="/"><img src={Logo} alt='Logo' /></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ms-auto" navbar>
+                        <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <NavLink href="/components/"> Home </NavLink>
                             </NavItem>
@@ -47,6 +48,8 @@ export default class Header extends React.Component {
                             <NavItem>
                                 <NavLink href="/components/"> Cart </NavLink>
                             </NavItem>
+                        </Nav>
+                        <Nav className="ms-auto" navbar>
                             <NavItem>
                                 <NavLink href="/components/"> Login </NavLink>
                             </NavItem>
