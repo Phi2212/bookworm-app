@@ -21,12 +21,15 @@ export default function Carousel({ list }) {
     const renderListItem = (list = []) => {
         return list.map((item) => {
             return (<SwiperSlide>
-                <Card style={{ width: '18rem' }}>
+                <Card className="text-center" style={{ width: '18rem' }}>
                     <Card.Img variant="top" src={"/bookcover/" + item.book_cover_photo + ".jpg"} />
                     <Card.Body>
                         <Card.Title>{item.book_title}</Card.Title>
                         <Card.Text>
                             {item.author_name}
+                        </Card.Text>
+                        <Card.Text>
+                            {item.book_price}
                         </Card.Text>
                         <Button variant="primary">{item.book_price}</Button>
                     </Card.Body>
