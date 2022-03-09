@@ -17,7 +17,6 @@ import { Button, Card } from "react-bootstrap";
 
 export default function Carousel({ list }) {
 
-
     const renderListItem = (list = []) => {
         return list.map((item) => {
             return (<SwiperSlide>
@@ -52,7 +51,7 @@ export default function Carousel({ list }) {
                 className="mySwiper"
             >
                 {renderListItem(list)}
-
+                
             </Swiper>
         </>
     );
