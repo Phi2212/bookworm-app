@@ -21,7 +21,7 @@ function Feature({ list }) {
       )
     })
   }
-  
+
   return (
     <>
       <div className='text-center'>
@@ -33,6 +33,7 @@ function Feature({ list }) {
 
         <Container>
           <Row>
+            
             {renderListItem(list)}
           </Row>
 

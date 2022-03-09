@@ -5153,7 +5153,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Home() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)({
     listBookCarousel: [],
-    listBookRecommend: []
+    listBookFeature: [],
+    type: "Recommend"
   }),
       _useState2 = _slicedToArray(_useState, 2),
       state = _useState2[0],
@@ -5188,6 +5189,12 @@ function Home() {
     }, _callee);
   })), []);
   console.log(state);
+
+  function changeType() {
+    axios__WEBPACK_IMPORTED_MODULE_3___default()();
+    set;
+  }
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_component_Carousel__WEBPACK_IMPORTED_MODULE_2__["default"], {
       list: state.listBookCarousel

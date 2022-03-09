@@ -8,18 +8,24 @@ function Home() {
 
   const [state, setState] = useState({
     listBookCarousel: [],
-    listBookRecommend: []
+    listBookFeature: [],
 
+    type: "Recommend"
   });
 
   useEffect(async () => {
     const getDataCarousel = await axios.get('http://127.0.0.1:8000/api/book-carousel');
     const getDataRecommended = await axios.get('http://127.0.0.1:8000/api/book-recommend');
-
+ 
     setState({listBookRecommend: getDataRecommended.data,listBookCarousel: getDataCarousel.data })
   }, [])
   console.log(state);
 
+
+  function changeType(){
+    axios ()
+    set
+  }
   return (
     <>
       <Carousel list={state.listBookCarousel} />
