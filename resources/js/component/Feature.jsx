@@ -13,9 +13,8 @@ function Feature({ list }) {
               {item.author_name}
             </Card.Text>
             <Card.Text>
-              {item.book_price}
+              {item.book_price} {item.discount_price} 
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
           </Card.Body>
         </Card>
       )
@@ -27,8 +26,8 @@ function Feature({ list }) {
       <div className='text-center'>
         <h1>Featured Book</h1>
         <ButtonGroup aria-label="Basic example ">
-          <Button variant="secondary">Left</Button>
-          <Button variant="secondary">Right</Button>
+          <Button variant="secondary">Recommend</Button>
+          <Button variant="secondary">Popular</Button>
         </ButtonGroup>
 
         <Container>

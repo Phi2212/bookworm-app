@@ -35,15 +35,15 @@ export default class Header extends React.Component {
                     <NavbarBrand href="/"><img src={Logo} alt='Logo' /></NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
+                        <Nav className="justify-content-center" navbar>
                             <NavItem>
-                                <NavLink href="/components/"> Home </NavLink>
+                                <NavLink href="/Home"> Home </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/"> Shop </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="../Page/About/About"> About </NavLink>
+                                <NavLink href="/About"> About </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/components/"> Cart </NavLink>
@@ -51,7 +51,7 @@ export default class Header extends React.Component {
                         </Nav>
                         <Nav className="ms-auto" navbar>
                             <NavItem>
-                                <NavLink href="/components/"> Login </NavLink>
+                                <NavLink href="/Signin"> Sign In </NavLink>
                             </NavItem>
                         </Nav>
                     </Collapse>

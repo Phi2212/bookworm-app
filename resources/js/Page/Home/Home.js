@@ -4,6 +4,7 @@ import Carousel from '../../component/Carousel'
 import axios from 'axios';
 import Feature from '../../component/Feature';
 
+
 function Home() {
 
   const [state, setState] = useState({

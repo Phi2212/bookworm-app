@@ -28,9 +28,8 @@ export default function Carousel({ list }) {
                             {item.author_name}
                         </Card.Text>
                         <Card.Text>
-                            {item.book_price}
+                            {item.book_price} {item.discount_price}
                         </Card.Text>
-                        <Button variant="primary">{item.book_price}</Button>
                     </Card.Body>
                 </Card>
             </SwiperSlide>)
