@@ -13,7 +13,7 @@ function Feature({ list }) {
               {item.author_name}
             </Card.Text>
             <Card.Text>
-              {item.book_price} {item.discount_price} 
+              {item.book_price} {item.discount_price}
             </Card.Text>
           </Card.Body>
         </Card>
@@ -23,21 +23,12 @@ function Feature({ list }) {
 
   return (
     <>
-      <div className='text-center'>
-        <h1>Featured Book</h1>
-        <ButtonGroup aria-label="Basic example ">
-          <Button variant="secondary">Recommend</Button>
-          <Button variant="secondary">Popular</Button>
-        </ButtonGroup>
+      <Container>
+        <Row>
+          {renderListItem(list)}
+        </Row>
 
-        <Container>
-          <Row>
-            
-            {renderListItem(list)}
-          </Row>
-
-        </Container>
-      </div>
+      </Container>
     </>
   )
 }
