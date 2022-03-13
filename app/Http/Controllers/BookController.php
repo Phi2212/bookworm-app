@@ -154,7 +154,7 @@ class BookController extends Controller
 
         $sort_highest = DB::table('book')
             ->leftJoin('discount', 'book.id', '=', 'discount.book_id')
-            ->select('book.id')
+            ->select('book.id','book.book_price','book.book_cover_photo','book.book_price')
             ->selectRaw('(CASE WHEN discount.discount_price IS null THEN book.book_price ELSE discount.discount_price END) as final_price')
             ->groupBy('book.id', 'discount.discount_price', 'book.book_price')
             ->orderByDesc('final_price')
