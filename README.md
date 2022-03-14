@@ -1,9 +1,9 @@
 ## How to use my app 
 Open Terminal run these:
-npm install react-bootstrap@2.2.1 
-npm install bootstrap@5.1.3
-npm i swiper
-npm install --save reactstrap react react-dom
+npm install react-bootstrap@2.2.1  
+npm install bootstrap@5.1.3 
+npm i swiper 
+npm install --save reactstrap react react-dom 
 Open Terminal, insert: npm run watch 
 Create new Terminal, insert: php artisan serve
 Then use this local address to run my app: http://127.0.0.1:8000
