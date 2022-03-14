@@ -40,13 +40,13 @@ export default class Header extends React.Component {
                                 <NavLink href="/Home"> Home </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/components/"> Shop </NavLink>
+                                <NavLink href="/Shop"> Shop </NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="/About"> About </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink href="/components/"> Cart </NavLink>
+                                <NavLink href="/Cart"> Cart </NavLink>
                             </NavItem>
                         </Nav>
                         <Nav className="ms-auto" navbar>

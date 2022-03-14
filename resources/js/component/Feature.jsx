@@ -13,7 +13,7 @@ function Feature({ list }) {
               {item.author_name}
             </Card.Text>
             <Card.Text>
-              {item.book_price} {item.discount_price}
+              {item.book_price}$ {item.discount_price}$
             </Card.Text>
           </Card.Body>
         </Card>

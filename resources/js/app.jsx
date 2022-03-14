@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Signin from './Page/Signin/Signin';
 import About from './Page/About/About';
+import Shop from './Page/Shop/Shop';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <Route path="/" element={<Home />}>
           </Route>
           <Route path="/About" element={<About />}>
+          </Route>
+          <Route path="/Shop" element={<Shop />}>
           </Route>
           <Route path="/Signin" element={<Signin />}>
           </Route>

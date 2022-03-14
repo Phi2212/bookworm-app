@@ -28,7 +28,7 @@ export default function Carousel({ list }) {
                             {item.author_name}
                         </Card.Text>
                         <Card.Text>
-                            {item.book_price} {item.discount_price}
+                            {item.book_price}$ {item.discount_price}$
                         </Card.Text>
                     </Card.Body>
                 </Card>
@@ -37,16 +37,19 @@ export default function Carousel({ list }) {
     }
     return (
         <>
+            <Button className="ms-auto">View All</Button>
+
             <Swiper
                 slidesPerView={4}
-                spaceBetween={20}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
+                spaceBetween={30}
+                slidesPerGroup={4}
+                loop={true}
+                loopFillGroupWithBlank={true}
+                pagination={{
+                  clickable: true,
                 }}
-
                 navigation={true}
-                modules={[Autoplay, Navigation]}
+                modules={[Pagination, Navigation]}
                 className="mySwiper"
             >
                 {renderListItem(list)}
