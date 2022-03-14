@@ -1,19 +1,32 @@
 import React from 'react'
-import { Card, Nav, Pagination } from 'react-bootstrap'
+import { Card, Dropdown, Nav, Pagination } from 'react-bootstrap'
 
 function ListBook() {
   return (
     <>
       <Nav className="justify-content-end" activeKey="/home">
-        <Nav.Item>
-          <Nav.Link href="/Shop">Active</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-1">Link</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link eventKey="link-2">Link</Nav.Link>
-        </Nav.Item>
+      <Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+  Sort by on sale
+  </Dropdown.Toggle>
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">Sort by on sale</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">Sort by popularity</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">Sort by price: low to high</Dropdown.Item>
+    <Dropdown.Item href="#/action-4">Sort by price: high to low</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
+<Dropdown>
+  <Dropdown.Toggle variant="success" id="dropdown-basic">
+    View 5
+  </Dropdown.Toggle>
+
+  <Dropdown.Menu>
+    <Dropdown.Item href="#/action-1">5</Dropdown.Item>
+    <Dropdown.Item href="#/action-2">10</Dropdown.Item>
+    <Dropdown.Item href="#/action-3">20</Dropdown.Item>
+  </Dropdown.Menu>
+</Dropdown>
         </Nav>
         <br></br>
         <br></br>
