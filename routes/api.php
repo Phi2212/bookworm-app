@@ -36,6 +36,16 @@ Route::get('/book-recommend',[BookController::class,'BookRecommend']);
 
 Route::get('/book-popular',[BookController::class,'BookPopular']);
 
+Route::get('/sort-highest',[BookController::class,'Sort_highest']);
+
+Route::get('/sort-lowest',[BookController::class,'Sort_lowest']);
+
+Route::get('/sort-book-onsale',[BookController::class,'SortBookCarousel']);
+
+Route::get('/sort-book-recommend',[BookController::class,'SortBookRecommend']);
+
+Route::get('/sort-book-popular',[BookController::class,'SortBookPopular']);
+
 // End Book Route
 
 // Start Order Route
